@@ -303,7 +303,9 @@ updateScrollPosition = (position) ->
       document.location.href = document.location.href
       rememberCurrentUrlAndState()
     else
-      window.scrollTo 0, 0
+      setTimeout -> 
+        window.scrollTo 0, 0
+      , 10
 
 clone = (original) ->
   return original if not original? or typeof original isnt 'object'
